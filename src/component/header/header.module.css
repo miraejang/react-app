@@ -1,0 +1,24 @@
+.header {
+  position: relative;
+  width: 100%;
+  background-color: #1a3c58;
+  text-align: center;
+}
+
+.title {
+  color: #fff;
+}
+
+.userBox {
+  display: flex;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 1em;
+  align-items: center;
+}
+
+.user {
+  color: #fff;
+  margin-right: 1em;
+}
