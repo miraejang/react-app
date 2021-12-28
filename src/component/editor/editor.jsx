@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from '../card/card';
+import Card from '../card_form/card_form';
 import styles from './editor.module.css';
 
 const Editor = ({ orders }) => (

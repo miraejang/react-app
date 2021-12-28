@@ -1,6 +1,6 @@
 import React from 'react';
 import ImageFileInput from '../image_file_input/image_file_input';
-import styles from './card.module.css';
+import styles from './card_form.module.css';
 
 const Card = ({ order }) => {
   const { title, status, send, tel, date, message, fileName, fileUrl } = order;
