@@ -1,0 +1,14 @@
+@value mediaQuery from '../../common/size.css';
+
+.orders {
+  display: flex;
+  width: 100%;
+  flex: 1 1;
+  flex-direction: row;
+}
+
+@media screen and (max-width: mediaQuery) {
+  .orders {
+    flex-direction: column;
+  }
+}
