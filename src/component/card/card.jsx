@@ -1,4 +1,5 @@
 import React from 'react';
+import ImageFileInput from '../image_file_input/image_file_input';
 import styles from './card.module.css';
 
 const Card = ({ order }) => {
@@ -17,10 +18,7 @@ const Card = ({ order }) => {
       <input className={styles.input} type="date" name="date" value={date} />
       <textarea className={styles.textarea} name="message" value={message} />
       <div className={styles.fileInput}>
-        <input type="file" name="file" id="" />
-        <button className={styles.button}>
-          {fileUrl ? { fileName } : 'No file'}
-        </button>
+        <ImageFileInput fileName={fileName} />
       </div>
       {true && <button className={styles.button}>Delete</button>}
       {false && <button className={styles.button}>Add</button>}
