@@ -1,0 +1,70 @@
+.card {
+  display: flex;
+  width: 100%;
+  max-width: 50rem;
+  align-items: center;
+  border-radius: 1em;
+  margin-bottom: 1em;
+  padding: 0.2em 0;
+  box-shadow: 6px 6px 8px 0px rgba(217, 217, 217, 1);
+}
+
+.card.receipt {
+  background-color: rgb(236, 255, 60);
+  color: #fff;
+}
+
+.card.working {
+  background: linear-gradient(
+    166deg,
+    rgba(237, 193, 211, 1) 0%,
+    rgba(212, 149, 161, 1) 60%,
+    rgba(162, 63, 63, 1) 100%,
+    rgba(127, 188, 242, 1) 100%
+  );
+}
+
+.card.complete {
+  background-color: rgb(146, 233, 153);
+  color: #000;
+}
+
+.card.hold {
+  background-color: rgb(158, 158, 158);
+  color: #000;
+}
+
+.image {
+  width: 10em;
+  height: 10em;
+  margin-left: 0.5em;
+  margin-right: 1em;
+  padding: 1em;
+  border-radius: 50%;
+}
+
+.info {
+  width: 100%;
+}
+.info p,
+.info pre {
+  font-size: 0.8rem;
+  margin-bottom: 0.2em;
+}
+
+.title {
+  font-size: 1.2rem;
+}
+
+.company {
+  margin-bottom: 1em;
+}
+
+.company::after {
+  content: '';
+  display: block;
+  width: 90%;
+  height: 2px;
+  background-color: wheat;
+  transform: translateY(0.5em);
+}
