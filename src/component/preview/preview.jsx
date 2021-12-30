@@ -7,7 +7,7 @@ const Preview = ({ orders }) => (
     <h2 className={styles.title}>Order List</h2>
     <ul className={styles.cards}>
       {orders.map(order => (
-        <Card order={order} />
+        <Card key={order.id} order={order} />
       ))}
     </ul>
   </div>

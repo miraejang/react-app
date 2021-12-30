@@ -6,6 +6,7 @@ import styles from './maker.module.css';
 const Maker = props => {
   const [orders, setOrders] = useState([
     {
+      id: '1',
       title: '생일용 꽃반구니',
       status: 'receipt',
       send: '장미래',
@@ -17,6 +18,7 @@ const Maker = props => {
       fileUrl: '',
     },
     {
+      id: '2',
       title: '축하용 꽃다발',
       status: 'working',
       send: '장미래',
@@ -28,6 +30,7 @@ const Maker = props => {
       fileUrl: '',
     },
     {
+      id: '3',
       title: '이사선물 화분',
       status: 'complete',
       send: '장미래',
@@ -39,6 +42,7 @@ const Maker = props => {
       fileUrl: '',
     },
     {
+      id: '4',
       title: '개업축하 화분',
       status: 'hold',
       send: '장미래',
