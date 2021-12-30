@@ -1,4 +1,5 @@
 .editor {
+  overflow-y: scroll;
   padding: 2em;
   background-color: gold;
   flex-basis: 50%;

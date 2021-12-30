@@ -1,6 +1,7 @@
 .header {
   position: relative;
   width: 100%;
+  padding: 3em 2em 2em;
   background-color: #1a3c58;
   text-align: center;
 }

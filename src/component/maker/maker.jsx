@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Editor from '../editor/editor';
+import Footer from '../footer/footer';
+import Header from '../header/header';
 import Preview from '../preview/preview';
 import styles from './maker.module.css';
 
@@ -56,10 +58,14 @@ const Maker = props => {
   ]);
 
   return (
-    <section className={styles.orders}>
-      <Editor orders={orders} />
-      <Preview orders={orders} />
-    </section>
+    <div className={styles.maker}>
+      <Header />
+      <section className={styles.orders}>
+        <Editor orders={orders} />
+        <Preview orders={orders} />
+      </section>
+      <Footer />
+    </div>
   );
 };
 
