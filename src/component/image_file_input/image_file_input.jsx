@@ -1,15 +1,13 @@
 import React, { useRef } from 'react';
 import styles from './image_file_input.module.css';
 
-const ImageFileInput = ({ fileName, fileURL }) => {
+const ImageFileInput = ({ name }) => {
   const inputRef = useRef();
 
   const onClick = e => {
     e.preventDefault();
     inputRef.current.click();
   };
-  const onChange = () => {};
-
   return (
     <div className={styles.container}>
       <input
@@ -18,10 +16,9 @@ const ImageFileInput = ({ fileName, fileURL }) => {
         type="file"
         accept="image/*"
         name="file"
-        onChange={onChange}
       />
       <button className={styles.button} onClick={onClick}>
-        {fileName || 'No file'}
+        {name || 'No file'}
       </button>
     </div>
   );

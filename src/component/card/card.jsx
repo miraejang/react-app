@@ -1,12 +1,15 @@
 import React from 'react';
 import styles from './card.module.css';
 
+const DEFAULT_IMAGE = '/images/default_image.jpg';
+
 const Card = ({ order }) => {
   const { title, status, send, tel, date, time, message, fileURL } = order;
+  const url = fileURL || DEFAULT_IMAGE;
 
   return (
     <li className={`${styles.card} ${getStyles(status)}`}>
-      <img className={styles.image} src={fileURL} alt="user" />
+      <img className={styles.image} src={url} alt="user" />
       <div className={styles.info}>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.status}>{status}</p>

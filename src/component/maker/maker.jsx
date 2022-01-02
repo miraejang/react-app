@@ -63,6 +63,10 @@ const Maker = ({ authService }) => {
   const onLogout = e => {
     authService.logout();
   };
+  const addOrder = order => {
+    const updated = [...orders, order];
+    setOrders(updated);
+  };
   useEffect(() => {
     authService.onAuthChange(user => !user && navigate('/login'));
   });
@@ -71,7 +75,7 @@ const Maker = ({ authService }) => {
     <div className={styles.maker}>
       <Header onLogout={onLogout} />
       <section className={styles.orders}>
-        <Editor orders={orders} />
+        <Editor orders={orders} addOrder={addOrder} />
         <Preview orders={orders} />
       </section>
       <Footer />

@@ -1,0 +1,23 @@
+.form {
+  display: flex;
+  width: 100%;
+  margin-bottom: 2em;
+  max-width: 80rem;
+  flex-wrap: wrap;
+}
+
+.input,
+.select,
+.button,
+.fileInput {
+  flex: 1 1 30%;
+}
+
+.button,
+.fileInput {
+  flex: 1 1 50%;
+}
+
+.textarea {
+  flex-basis: 100%;
+}

@@ -1,9 +1,9 @@
 import React from 'react';
 import ImageFileInput from '../image_file_input/image_file_input';
-import styles from './card_form.module.css';
+import styles from './card_edit_form.module.css';
 
-const CardForm = ({ order }) => {
-  const { title, status, send, tel, date, message, fileName, fileUrl } = order;
+const CardEditForm = ({ order }) => {
+  const { title, status, send, tel, date, message, fileName, fileURL } = order;
   const onChange = () => {};
 
   return (
@@ -49,12 +49,11 @@ const CardForm = ({ order }) => {
         onChange={onChange}
       />
       <div className={styles.fileInput}>
-        <ImageFileInput fileName={fileName} />
+        <ImageFileInput name={fileName} url={fileURL} />
       </div>
-      {true && <button className={styles.button}>Delete</button>}
-      {false && <button className={styles.button}>Add</button>}
+      <button className={styles.button}>Delete</button>
     </form>
   );
 };
 
-export default CardForm;
+export default CardEditForm;
