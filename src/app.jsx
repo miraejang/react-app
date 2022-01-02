@@ -4,12 +4,12 @@ import Header from './component/header/header';
 import Login from './component/login/login';
 import Maker from './component/maker/maker';
 
-function App() {
+function App({ authService }) {
   return (
     <div className={styles.app}>
       <BrowserRouter>
         <Routes>
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login authService={authService} />} />
           <Route exact path="/" element={<Maker />} />
         </Routes>
       </BrowserRouter>
