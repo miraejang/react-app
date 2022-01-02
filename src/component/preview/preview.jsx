@@ -6,8 +6,8 @@ const Preview = ({ orders }) => (
   <div className={styles.preview}>
     <h2 className={styles.title}>Order List</h2>
     <ul className={styles.cards}>
-      {orders.map(order => (
-        <Card key={order.id} order={order} />
+      {Object.keys(orders).map(key => (
+        <Card key={key} order={orders[key]} />
       ))}
     </ul>
   </div>

@@ -9,8 +9,8 @@ import styles from './maker.module.css';
 
 const Maker = ({ authService }) => {
   const navigate = useNavigate();
-  const [orders, setOrders] = useState([
-    {
+  const [orders, setOrders] = useState({
+    1: {
       id: '1',
       title: '생일용 꽃반구니',
       status: 'receipt',
@@ -22,7 +22,7 @@ const Maker = ({ authService }) => {
       fileName: 'mirae',
       fileUrl: '',
     },
-    {
+    2: {
       id: '2',
       title: '축하용 꽃다발',
       status: 'working',
@@ -34,7 +34,7 @@ const Maker = ({ authService }) => {
       fileName: 'mirae',
       fileUrl: '',
     },
-    {
+    3: {
       id: '3',
       title: '이사선물 화분',
       status: 'complete',
@@ -46,7 +46,7 @@ const Maker = ({ authService }) => {
       fileName: 'mirae',
       fileUrl: '',
     },
-    {
+    4: {
       id: '4',
       title: '개업축하 화분',
       status: 'hold',
@@ -58,14 +58,24 @@ const Maker = ({ authService }) => {
       fileName: 'mirae',
       fileUrl: '',
     },
-  ]);
+  });
 
   const onLogout = e => {
     authService.logout();
   };
-  const addOrder = order => {
-    const updated = [...orders, order];
-    setOrders(updated);
+  const createOrUpdateOrder = order => {
+    setOrders(orders => {
+      const updated = { ...orders };
+      updated[order.id] = order;
+      return updated;
+    });
+  };
+  const deleteOrder = order => {
+    setOrders(orders => {
+      const updated = { ...orders };
+      delete updated[order.id];
+      return updated;
+    });
   };
   useEffect(() => {
     authService.onAuthChange(user => !user && navigate('/login'));
@@ -75,7 +85,11 @@ const Maker = ({ authService }) => {
     <div className={styles.maker}>
       <Header onLogout={onLogout} />
       <section className={styles.orders}>
-        <Editor orders={orders} addOrder={addOrder} />
+        <Editor
+          orders={orders}
+          createOrUpdateOrder={createOrUpdateOrder}
+          deleteOrder={deleteOrder}
+        />
         <Preview orders={orders} />
       </section>
       <Footer />

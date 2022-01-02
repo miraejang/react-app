@@ -16,6 +16,7 @@ const CardAddForm = ({ addOrder }) => {
   const onSubmit = e => {
     e.preventDefault();
     const order = {
+      id: Date.now(),
       title: titleRef.current.value || '',
       status: statusRef.current.value || '',
       send: sendRef.current.value || '',
@@ -25,6 +26,7 @@ const CardAddForm = ({ addOrder }) => {
       fileName: '',
       fileURL: '',
     };
+    formRef.current.reset();
     addOrder(order);
   };
 

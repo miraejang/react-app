@@ -2,9 +2,19 @@ import React from 'react';
 import ImageFileInput from '../image_file_input/image_file_input';
 import styles from './card_edit_form.module.css';
 
-const CardEditForm = ({ order }) => {
+const CardEditForm = ({ order, updateOrder, deleteOrder }) => {
   const { title, status, send, tel, date, message, fileName, fileURL } = order;
-  const onChange = () => {};
+  const onChange = e => {
+    if (e.currentTarget === null) return;
+    e.preventDefault();
+    updateOrder({
+      ...order,
+      [e.currentTarget.name]: e.currentTarget.value,
+    });
+  };
+  const onSubmit = () => {
+    deleteOrder(order);
+  };
 
   return (
     <form className={styles.form}>
@@ -15,7 +25,7 @@ const CardEditForm = ({ order }) => {
         value={title}
         onChange={onChange}
       />
-      <select className={styles.select} name={status} onChange={onChange}>
+      <select className={styles.select} name="status" onChange={onChange}>
         <option value="receipt">접수</option>
         <option value="working">작업중</option>
         <option value="complete">완료</option>
@@ -51,7 +61,9 @@ const CardEditForm = ({ order }) => {
       <div className={styles.fileInput}>
         <ImageFileInput name={fileName} url={fileURL} />
       </div>
-      <button className={styles.button}>Delete</button>
+      <button className={styles.button} onClick={onSubmit}>
+        Delete
+      </button>
     </form>
   );
 };
