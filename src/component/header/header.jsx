@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './header.module.css';
 
-const Header = props => {
+const Header = ({ onLogout }) => {
   const login = false;
 
   return (
@@ -12,10 +12,12 @@ const Header = props => {
         alt="header"
       />
       <h1 className={styles.title}>Flower Order Manager</h1>
-      {login && (
+      {onLogout && (
         <div className={styles.userBox}>
           <p className={styles.user}>미래</p>
-          <button className={styles.logoutBtn}>Logout</button>
+          <button className={styles.logoutBtn} onClick={onLogout}>
+            Logout
+          </button>
         </div>
       )}
     </header>

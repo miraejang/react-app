@@ -10,7 +10,7 @@ function App({ authService }) {
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login authService={authService} />} />
-          <Route exact path="/" element={<Maker />} />
+          <Route exact path="/" element={<Maker authService={authService} />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react/cjs/react.development';
 import Editor from '../editor/editor';
 import Footer from '../footer/footer';
 import Header from '../header/header';
 import Preview from '../preview/preview';
 import styles from './maker.module.css';
 
-const Maker = props => {
+const Maker = ({ authService }) => {
+  const navigate = useNavigate();
   const [orders, setOrders] = useState([
     {
       id: '1',
@@ -57,9 +60,16 @@ const Maker = props => {
     },
   ]);
 
+  const onLogout = e => {
+    authService.logout();
+  };
+  useEffect(() => {
+    authService.onAuthChange(user => !user && navigate('/login'));
+  });
+
   return (
     <div className={styles.maker}>
-      <Header />
+      <Header onLogout={onLogout} />
       <section className={styles.orders}>
         <Editor orders={orders} />
         <Preview orders={orders} />
