@@ -26,10 +26,18 @@ const CardEditForm = ({ order, updateOrder, deleteOrder }) => {
         onChange={onChange}
       />
       <select className={styles.select} name="status" onChange={onChange}>
-        <option value="receipt">접수</option>
-        <option value="working">작업중</option>
-        <option value="complete">완료</option>
-        <option value="hold">보류</option>
+        <option value="receipt" selected={status === 'receipt'}>
+          접수
+        </option>
+        <option value="working" selected={status === 'working'}>
+          작업중
+        </option>
+        <option value="complete" selected={status === 'complete'}>
+          완료
+        </option>
+        <option value="hold" selected={status === 'hold'}>
+          보류
+        </option>
       </select>
       <input
         className={styles.input}
