@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRef, useState } from 'react/cjs/react.development';
+import Button from '../button/button';
 import ImageFileInput from '../image_file_input/image_file_input';
 import styles from './card_add_form.module.css';
 
@@ -82,9 +83,7 @@ const CardAddForm = ({ FileInput, addOrder }) => {
       <div className={styles.fileInput}>
         <FileInput onFileChange={onFileChange} />
       </div>
-      <button className={styles.button} onClick={onSubmit}>
-        Add
-      </button>
+      <Button name="Add" onClick={onSubmit} />
     </form>
   );
 };

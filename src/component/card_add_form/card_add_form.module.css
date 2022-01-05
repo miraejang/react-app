@@ -3,17 +3,33 @@
   width: 100%;
   margin-bottom: 2em;
   max-width: 80rem;
+  border-left: 1px solid #000;
+  border-bottom: 1px solid #000;
   flex-wrap: wrap;
 }
 
 .input,
 .select,
-.button,
-.fileInput {
-  flex: 1 1 30%;
+.fileInput,
+.textarea {
+  border: 0;
+  border-top: 1px solid #000;
+  border-right: 1px solid #000;
 }
 
-.button,
+.input,
+.select,
+.textarea {
+  padding: 0.5em;
+}
+
+.input,
+.select,
+.fileInput {
+  flex: 1 1 30%;
+  background-color: #fff;
+}
+
 .fileInput {
   flex: 1 1 50%;
 }

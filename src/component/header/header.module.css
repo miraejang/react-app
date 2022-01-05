@@ -23,3 +23,10 @@
   color: #fff;
   margin-right: 1em;
 }
+
+.logoutBtn {
+  padding: 0.8em;
+  background-color: #000;
+  border-radius: 1em;
+  color: #fff;
+}
