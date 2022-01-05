@@ -7,7 +7,7 @@ import Header from '../header/header';
 import Preview from '../preview/preview';
 import styles from './maker.module.css';
 
-const Maker = ({ authService }) => {
+const Maker = ({ FileInput, authService }) => {
   const navigate = useNavigate();
   const [orders, setOrders] = useState({
     1: {
@@ -86,6 +86,7 @@ const Maker = ({ authService }) => {
       <Header onLogout={onLogout} />
       <section className={styles.orders}>
         <Editor
+          FileInput={FileInput}
           orders={orders}
           createOrUpdateOrder={createOrUpdateOrder}
           deleteOrder={deleteOrder}

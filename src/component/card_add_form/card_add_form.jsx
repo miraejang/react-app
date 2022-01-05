@@ -3,7 +3,7 @@ import { useRef, useState } from 'react/cjs/react.development';
 import ImageFileInput from '../image_file_input/image_file_input';
 import styles from './card_add_form.module.css';
 
-const CardAddForm = ({ addOrder }) => {
+const CardAddForm = ({ FileInput, addOrder }) => {
   const formRef = useRef();
   const titleRef = useRef();
   const statusRef = useRef();
@@ -13,6 +13,12 @@ const CardAddForm = ({ addOrder }) => {
   const messageRef = useRef();
   const [file, setFile] = useState({ name: null, url: null });
 
+  const onFileChange = file => {
+    setFile({
+      name: file.name,
+      url: file.url,
+    });
+  };
   const onSubmit = e => {
     e.preventDefault();
     const order = {
@@ -23,10 +29,11 @@ const CardAddForm = ({ addOrder }) => {
       tel: telRef.current.value || '',
       date: dateRef.current.value || '',
       message: messageRef.current.value || '',
-      fileName: '',
-      fileURL: '',
+      fileName: file.name,
+      fileURL: file.url,
     };
     formRef.current.reset();
+    setFile({ name: null, url: null });
     addOrder(order);
   };
 
@@ -73,7 +80,7 @@ const CardAddForm = ({ addOrder }) => {
         placeholder="message"
       />
       <div className={styles.fileInput}>
-        <ImageFileInput name={file.name} url={file.url} />
+        <FileInput onFileChange={onFileChange} />
       </div>
       <button className={styles.button} onClick={onSubmit}>
         Add

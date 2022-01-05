@@ -9,7 +9,9 @@ const Card = ({ order }) => {
 
   return (
     <li className={`${styles.card} ${getStyles(status)}`}>
-      <img className={styles.image} src={url} alt="user" />
+      <div className={styles.imageBox}>
+        <img className={styles.image} src={url} alt="user" />
+      </div>
       <div className={styles.info}>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.status}>{status}</p>

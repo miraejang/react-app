@@ -34,13 +34,20 @@
   color: #000;
 }
 
-.image {
-  width: 10em;
+.imageBox {
+  display: flex;
+  width: 20em;
   height: 10em;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  max-width: 100%;
+  max-height: 100%;
   margin-left: 0.5em;
   margin-right: 1em;
   padding: 1em;
-  border-radius: 50%;
 }
 
 .info {
