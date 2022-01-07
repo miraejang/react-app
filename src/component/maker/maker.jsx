@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react/cjs/react.development';
 import Editor from '../editor/editor';
 import Footer from '../footer/footer';
@@ -7,58 +7,12 @@ import Header from '../header/header';
 import Preview from '../preview/preview';
 import styles from './maker.module.css';
 
-const Maker = ({ FileInput, authService }) => {
+const Maker = ({ FileInput, authService, cardRepository }) => {
   const navigate = useNavigate();
-  const [orders, setOrders] = useState({
-    1: {
-      id: '1',
-      title: '생일용 꽃반구니',
-      status: 'receipt',
-      send: '장미래',
-      tel: '01020808308',
-      date: '2021-12-28',
-      time: '',
-      message: '화려한 스타일',
-      fileName: 'mirae',
-      fileUrl: '',
-    },
-    2: {
-      id: '2',
-      title: '축하용 꽃다발',
-      status: 'working',
-      send: '장미래',
-      tel: '01020808308',
-      date: '2021-12-28',
-      time: '',
-      message: '화려한 스타일',
-      fileName: 'mirae',
-      fileUrl: '',
-    },
-    3: {
-      id: '3',
-      title: '이사선물 화분',
-      status: 'complete',
-      send: '장미래',
-      tel: '01020808308',
-      date: '2021-12-28',
-      time: '',
-      message: '화려한 스타일',
-      fileName: 'mirae',
-      fileUrl: '',
-    },
-    4: {
-      id: '4',
-      title: '개업축하 화분',
-      status: 'hold',
-      send: '장미래',
-      tel: '01020808308',
-      date: '2021-12-28',
-      time: '',
-      message: '화려한 스타일',
-      fileName: 'mirae',
-      fileUrl: '',
-    },
-  });
+  const location = useLocation();
+  const navigateState = location.state;
+  const [orders, setOrders] = useState({});
+  const [userId, setUserId] = useState(navigateState && navigateState.id);
 
   const onLogout = e => {
     authService.logout();
@@ -69,6 +23,7 @@ const Maker = ({ FileInput, authService }) => {
       updated[order.id] = order;
       return updated;
     });
+    cardRepository.saveCard(userId, order);
   };
   const deleteOrder = order => {
     setOrders(orders => {
@@ -76,10 +31,24 @@ const Maker = ({ FileInput, authService }) => {
       delete updated[order.id];
       return updated;
     });
+    cardRepository.removeCard(userId, order);
   };
   useEffect(() => {
-    authService.onAuthChange(user => !user && navigate('/login'));
+    authService.onAuthChange(user => {
+      if (user) {
+        setUserId(user.uid);
+      } else {
+        navigate('/login');
+      }
+    });
   });
+  useEffect(() => {
+    if (!userId) return;
+    const stopSync = cardRepository.syncCards(userId, cards =>
+      setOrders(cards)
+    );
+    return () => stopSync();
+  }, [cardRepository, userId]);
 
   return (
     <div className={styles.maker}>
