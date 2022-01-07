@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-order-management-app/static/css/main.863dba3f.css",
-    "main.js": "/react-order-management-app/static/js/main.81756897.js",
+    "main.js": "/react-order-management-app/static/js/main.4f95074d.js",
     "index.html": "/react-order-management-app/index.html",
     "main.863dba3f.css.map": "/react-order-management-app/static/css/main.863dba3f.css.map",
-    "main.81756897.js.map": "/react-order-management-app/static/js/main.81756897.js.map"
+    "main.4f95074d.js.map": "/react-order-management-app/static/js/main.4f95074d.js.map"
   },
   "entrypoints": [
     "static/css/main.863dba3f.css",
-    "static/js/main.81756897.js"
+    "static/js/main.4f95074d.js"
   ]
 }
