@@ -1,10 +1,9 @@
 import React from 'react';
 import Button from '../button/button';
-import ImageFileInput from '../image_file_input/image_file_input';
 import styles from './card_edit_form.module.css';
 
 const CardEditForm = ({ FileInput, order, updateOrder, deleteOrder }) => {
-  const { title, status, send, tel, date, message, fileName, fileURL } = order;
+  const { title, status, send, tel, date, message, fileName } = order;
 
   const onFileChange = file => {
     updateOrder({ ...order, fileName: file.name, fileURL: file.url });

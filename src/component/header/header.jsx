@@ -2,8 +2,6 @@ import React from 'react';
 import styles from './header.module.css';
 
 const Header = ({ onLogout }) => {
-  const login = false;
-
   return (
     <header className={styles.header}>
       <img
