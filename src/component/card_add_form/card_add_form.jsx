@@ -79,7 +79,7 @@ const CardAddForm = ({ FileInput, addOrder }) => {
         placeholder="message"
       />
       <div className={styles.fileInput}>
-        <FileInput onFileChange={onFileChange} />
+        <FileInput onFileChange={onFileChange} buttonText="Add Image" />
       </div>
       <Button name="Add" onClick={onSubmit} />
     </form>
