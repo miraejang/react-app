@@ -10,28 +10,19 @@
 }
 
 .card.receipt {
-  background-color: rgb(236, 255, 60);
-  color: #fff;
+  background-color: #fbeaa7;
 }
 
 .card.working {
-  background: linear-gradient(
-    166deg,
-    rgba(237, 193, 211, 1) 0%,
-    rgba(212, 149, 161, 1) 60%,
-    rgba(162, 63, 63, 1) 100%,
-    rgba(127, 188, 242, 1) 100%
-  );
+  background-color: #f8c0ba;
 }
 
 .card.complete {
-  background-color: rgb(146, 233, 153);
-  color: #000;
+  background-color: #b2e4c5;
 }
 
 .card.hold {
-  background-color: rgb(158, 158, 158);
-  color: #000;
+  background-color: #d1d8d8;
 }
 
 .imageBox {
