@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './card.module.css';
 
-const DEFAULT_IMAGE = '/images/default_image.jpg';
+const DEFAULT_IMAGE = `${process.env.PUBLIC_URL}/images/default_image.jpg`;
 
 const Card = ({ order }) => {
   const { title, status, send, tel, date, time, message, fileURL } = order;

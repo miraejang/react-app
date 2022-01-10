@@ -6,7 +6,7 @@ const Header = ({ onLogout }) => {
     <header className={styles.header}>
       <img
         className={styles.headerImg}
-        src="/images/header_img.png"
+        src={`${process.env.PUBLIC_URL}/images/header_img.png`}
         alt="header"
       />
       <h1 className={styles.title}>Flower Order Manager</h1>
