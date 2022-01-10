@@ -42,7 +42,7 @@ const ImageFileInput = ({
           }`}
           onClick={onClick}
         >
-          {fileName || buttonText || 'No File'}
+          {fileName || buttonText || 'No Image'}
         </button>
       )}
     </div>
