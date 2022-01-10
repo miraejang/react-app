@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/react-order-management-app/static/css/main.863dba3f.css",
-    "main.js": "/react-order-management-app/static/js/main.0968d877.js",
+    "main.css": "/react-order-management-app/static/css/main.9d9d51f2.css",
+    "main.js": "/react-order-management-app/static/js/main.18133022.js",
     "index.html": "/react-order-management-app/index.html",
-    "main.863dba3f.css.map": "/react-order-management-app/static/css/main.863dba3f.css.map",
-    "main.0968d877.js.map": "/react-order-management-app/static/js/main.0968d877.js.map"
+    "main.9d9d51f2.css.map": "/react-order-management-app/static/css/main.9d9d51f2.css.map",
+    "main.18133022.js.map": "/react-order-management-app/static/js/main.18133022.js.map"
   },
   "entrypoints": [
-    "static/css/main.863dba3f.css",
-    "static/js/main.0968d877.js"
+    "static/css/main.9d9d51f2.css",
+    "static/js/main.18133022.js"
   ]
 }
