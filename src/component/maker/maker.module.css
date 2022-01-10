@@ -1,3 +1,5 @@
+@value mediaQuery from '../../common/size.css';
+
 .maker {
   display: flex;
   width: 100%;
