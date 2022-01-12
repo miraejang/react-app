@@ -12,6 +12,7 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
   const navigateState = location.state;
   const [orders, setOrders] = useState({});
   const [userId, setUserId] = useState(navigateState && navigateState.id);
+  const [userName, setUserName] = useState();
 
   const onLogout = e => {
     authService.logout();
@@ -35,6 +36,7 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
   useEffect(() => {
     authService.onAuthChange(user => {
       if (user) {
+        setUserName(user.displayName);
         setUserId(user.uid);
       } else {
         navigate('/login');
@@ -51,7 +53,7 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
 
   return (
     <div className={styles.maker}>
-      <Header onLogout={onLogout} />
+      <Header userName={userName} onLogout={onLogout} />
       <section className={styles.orders}>
         <Editor
           FileInput={FileInput}
