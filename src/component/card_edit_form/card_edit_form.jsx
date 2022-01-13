@@ -27,7 +27,7 @@ const CardEditForm = ({ FileInput, order, updateOrder, deleteOrder }) => {
       [e.currentTarget.name]: e.currentTarget.value,
     });
   };
-  const onSubmit = () => {
+  const onClick = () => {
     deleteOrder(order);
   };
 
@@ -146,7 +146,7 @@ const CardEditForm = ({ FileInput, order, updateOrder, deleteOrder }) => {
         <div className={styles.fileInput}>
           <FileInput fileName={fileName} onFileChange={onFileChange} />
         </div>
-        <Button name="Delete" onChange={onSubmit} />
+        <Button name="Delete" onClick={onClick} />
       </div>
     </form>
   );

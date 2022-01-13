@@ -52,19 +52,33 @@
   margin-bottom: 0.2em;
 }
 
-.title {
-  margin-bottom: 0.8em;
-  font-size: 1.2rem;
+.rightBox {
+  display: flex;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  align-items: center;
 }
 
 .status {
-  position: absolute;
-  top: 1em;
-  right: 2em;
+  margin-right: 0.8em;
   padding: 0.4em 1em;
   border-radius: 1em;
-  background: #43698a;
+  background-color: #43698a;
   color: #fff;
+}
+
+.editBtn,
+.removeBtn {
+  margin-left: 0.1em;
+  background-color: transparent;
+  font-size: 1.8em;
+  color: #43698a;
+}
+
+.title {
+  margin-bottom: 0.8em;
+  font-size: 1.2rem;
 }
 
 .senderBox,

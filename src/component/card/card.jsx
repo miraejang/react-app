@@ -1,9 +1,15 @@
+import {
+  faEdit,
+  faPenSquare,
+  faTrash,
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import styles from './card.module.css';
 
 const DEFAULT_IMAGE = `${process.env.PUBLIC_URL}/images/default_image.jpg`;
 
-const Card = ({ order }) => {
+const Card = ({ order, deleteOrder }) => {
   const {
     title,
     status,
@@ -18,14 +24,26 @@ const Card = ({ order }) => {
   } = order;
   const url = fileURL || DEFAULT_IMAGE;
 
+  const onClick = () => {
+    deleteOrder(order);
+  };
+
   return (
-    <li className={`${styles.card} ${getStyles(status)}`}>
+    <div className={`${styles.card} ${getStyles(status)}`}>
       <div className={styles.imageBox}>
         <img className={styles.image} src={url} alt="user" />
       </div>
       <div className={styles.info}>
         <h3 className={styles.title}>{title}</h3>
-        <p className={styles.status}>{statusText(status)}</p>
+        <div className={styles.rightBox}>
+          <p className={styles.status}>{statusText(status)}</p>
+          <button className={styles.editBtn}>
+            <FontAwesomeIcon icon={faEdit} />
+          </button>
+          <button className={styles.removeBtn} onClick={onClick}>
+            <FontAwesomeIcon icon={faTrash} />
+          </button>
+        </div>
         <div className={styles.senderBox}>
           <h4 className={styles.h4}>보낸 분</h4>
           <p className={styles.sender}>
@@ -48,7 +66,7 @@ const Card = ({ order }) => {
         </div>
         <pre className={styles.message}>{message}</pre>
       </div>
-    </li>
+    </div>
   );
 };
 
