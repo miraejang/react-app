@@ -1,8 +1,7 @@
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Card from 'component/card/card';
 import CardAddForm from 'component/card_add_form/card_add_form';
-import CardEditForm from 'component/card_edit_form/card_edit_form';
+import OrderCard from 'component/orderCard/orderCard';
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Footer from '../footer/footer';
@@ -86,16 +85,13 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
         </div>
         <ul className={styles.cards}>
           {Object.keys(orders).map(key => (
-            <li className={styles.card}>
-              <CardEditForm
-                key={key}
-                FileInput={FileInput}
-                order={orders[key]}
-                updateOrder={createOrUpdateOrder}
-                deleteOrder={deleteOrder}
-              />
-              <Card key={key} order={orders[key]} />
-            </li>
+            <OrderCard
+              key={key}
+              FileInput={FileInput}
+              order={orders[key]}
+              updateOrder={createOrUpdateOrder}
+              deleteOrder={deleteOrder}
+            />
           ))}
         </ul>
       </section>
