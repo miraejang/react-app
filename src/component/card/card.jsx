@@ -1,15 +1,11 @@
-import {
-  faEdit,
-  faPenSquare,
-  faTrash,
-} from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import styles from './card.module.css';
 
 const DEFAULT_IMAGE = `${process.env.PUBLIC_URL}/images/default_image.jpg`;
 
-const Card = ({ order, deleteOrder }) => {
+const Card = ({ order, updateOrder, deleteOrder }) => {
   const {
     title,
     status,
@@ -21,11 +17,16 @@ const Card = ({ order, deleteOrder }) => {
     receive_date,
     message,
     fileURL,
+    editing,
   } = order;
   const url = fileURL || DEFAULT_IMAGE;
 
   const onClick = () => {
     deleteOrder(order);
+  };
+  const toggleEdit = () => {
+    console.log('editing', editing, order);
+    updateOrder({ ...order, editing: !editing });
   };
 
   return (
@@ -37,7 +38,7 @@ const Card = ({ order, deleteOrder }) => {
         <h3 className={styles.title}>{title}</h3>
         <div className={styles.rightBox}>
           <p className={styles.status}>{statusText(status)}</p>
-          <button className={styles.editBtn}>
+          <button className={styles.editBtn} onClick={toggleEdit}>
             <FontAwesomeIcon icon={faEdit} />
           </button>
           <button className={styles.removeBtn} onClick={onClick}>

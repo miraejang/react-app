@@ -1,4 +1,4 @@
-import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { faSortUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CardAddForm from 'component/card_add_form/card_add_form';
 import OrderCard from 'component/order_card/order_card';
@@ -36,9 +36,8 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
     });
     cardRepository.removeCard(userId, order);
   };
-  const toggleOpen = e => {
-    e.preventDefault();
-    setOpen(!open);
+  const toggleOpen = () => {
+    setOpen(open => !open);
   };
   useEffect(() => {
     authService.onAuthChange(user => {
@@ -71,15 +70,15 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
           {open && (
             <>
               <h2>Add Order Card</h2>
-              <button className={styles.addCloseBtn} onClick={toggleOpen}>
-                <FontAwesomeIcon icon={faTimesCircle} />
-              </button>
               <div className={open ? styles.open : styles.close}>
                 <CardAddForm
                   FileInput={FileInput}
                   addOrder={createOrUpdateOrder}
                 />
               </div>
+              <button className={styles.addCloseBtn} onClick={toggleOpen}>
+                <FontAwesomeIcon icon={faSortUp} />
+              </button>
             </>
           )}
         </div>
@@ -89,7 +88,7 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
               key={key}
               FileInput={FileInput}
               order={orders[key]}
-              updateOrder={createOrUpdateOrder}
+              createOrUpdateOrder={createOrUpdateOrder}
               deleteOrder={deleteOrder}
             />
           ))}

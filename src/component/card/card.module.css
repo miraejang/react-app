@@ -2,10 +2,8 @@
   display: flex;
   position: relative;
   width: 100%;
-  max-width: 60rem;
   align-items: center;
   border-radius: 1em;
-  margin-bottom: 1em;
   padding: 1em 0;
   box-shadow: 6px 6px 8px 0px rgba(217, 217, 217, 1);
 }

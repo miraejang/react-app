@@ -14,6 +14,7 @@ const CardEditForm = ({ FileInput, order, updateOrder, deleteOrder }) => {
     receive_date,
     message,
     fileName,
+    editing,
   } = order;
 
   const onFileChange = file => {
@@ -146,7 +147,7 @@ const CardEditForm = ({ FileInput, order, updateOrder, deleteOrder }) => {
         <div className={styles.fileInput}>
           <FileInput fileName={fileName} onFileChange={onFileChange} />
         </div>
-        <Button name="Delete" onClick={onClick} />
+        {editing && <Button name="Delete" onClick={onClick} />}
       </div>
     </form>
   );

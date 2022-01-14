@@ -36,6 +36,7 @@ const CardAddForm = ({ FileInput, addOrder }) => {
       message: messageRef.current.value || '',
       fileName: file.name,
       fileURL: file.url,
+      editing: false,
     };
     formRef.current.reset();
     setFile({ name: null, url: null });
