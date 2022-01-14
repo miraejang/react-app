@@ -1,7 +1,7 @@
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CardAddForm from 'component/card_add_form/card_add_form';
-import OrderCard from 'component/orderCard/orderCard';
+import OrderCard from 'component/order_card/order_card';
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Footer from '../footer/footer';
