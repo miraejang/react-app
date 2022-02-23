@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Flower Order Manager
+주문을 카드형태로 등록하여 관리하는 앱입니다.    
+　
+ 
+### 이 과정을 통해 얻은 것
+- Firebase의 Authentication을 사용하여 로그인 기능을 구현할 수 있습니다.
+- Firebase의 Realtime Database에 데이터를 실시간으로 저장하고 사용할 수 있습니다.
+- Cloudinary를 사용하여 이미지를 저장할 수 있습니다.
+- PostCSS를 사용하여 공통으로 사용되어지는 것을 변수로 지정할 수 있습니다.
+- 구현할 기능을 계획하고 그것을 구현할 수 있습니다.    
+　
+ 
+### 사용한 기술
+- React
+- React Router
+- Firebase
+- Cloudinary
+- PostCSS    
+　
+ 
+## 구현한 기능 설명
+### 로그인 / 로그아웃
+Firebase의 Authentication을 이용하여 로그인 / 로그아웃 기능을 구현할 수 있습니다.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 주문 카드 등록 / 관리 페이지
+Router을 이용하여 로그인이 완료되면 주문 카드를 등록하고 관리할 수 있는 페이지로 이동합니다.   
+주문 카드는 로그인 되어진 아이디에 따라 실시간으로 Firebase의 Realtime Database에 저장되고 보입니다.   
 
-## Available Scripts
+### 주문 카드
+카드를 등록하면 Firebase의 Realtime Database에 저장이 됩니다.   
+등록된 내용대로 Card가 생성됩니다.    
+카드의 내용을 수정하면 State 업데이트가 되고, 실시간으로 Firebase에 저장된 내용도 함깨 수정됩니다.   
+카드를 삭제하면 Firebase의 데이터도 삭제됩니다.   
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 이미지 등록
+Dependency Injection을 이해하고 할 수 있습니다.   
+Cloudinary를 통해 이미지를 등록하고, 불필요하게 큰 이미지를 축소하여 저장할 수 있습니다.   
+이미지가 등록되는 동안에는 로딩되는 이미지를 보여주어 사용자가 등록되고 있음을 알 수 있도록 표현했습니다.   
