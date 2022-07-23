@@ -6,7 +6,7 @@ import Maker from './component/maker/maker';
 function App({ FileInput, authService, cardRepository }) {
   return (
     <div className={styles.app}>
-      <BrowserRouter basename="/react-order-management-app">
+      <BrowserRouter basename="/react-memo-card-app">
         <Routes>
           <Route path="/login" element={<Login authService={authService} />} />
           <Route
