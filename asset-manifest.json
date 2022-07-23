@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/react-order-management-app/static/css/main.c15361f8.css",
-    "main.js": "/react-order-management-app/static/js/main.19e3340b.js",
-    "index.html": "/react-order-management-app/index.html",
-    "main.c15361f8.css.map": "/react-order-management-app/static/css/main.c15361f8.css.map",
-    "main.19e3340b.js.map": "/react-order-management-app/static/js/main.19e3340b.js.map"
+    "main.css": "/react-memo-card-app/static/css/main.bc804b71.css",
+    "main.js": "/react-memo-card-app/static/js/main.90ac2ae2.js",
+    "index.html": "/react-memo-card-app/index.html",
+    "main.bc804b71.css.map": "/react-memo-card-app/static/css/main.bc804b71.css.map",
+    "main.90ac2ae2.js.map": "/react-memo-card-app/static/js/main.90ac2ae2.js.map"
   },
   "entrypoints": [
-    "static/css/main.c15361f8.css",
-    "static/js/main.19e3340b.js"
+    "static/css/main.bc804b71.css",
+    "static/js/main.90ac2ae2.js"
   ]
 }
